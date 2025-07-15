@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 
@@ -12,12 +11,13 @@ const MembershipProcessSection = () => {
     {
       number: "02",
       title: "Connect",
-      description: "Have a conversation with our team to explore the right path for you and answer any questions about the Academy experience."
+      description: "We'll reach out/contact you to schedule a friendly call to understand how the Academy can support your journey and how you might inspire others."
+
     },
     {
       number: "03",
       title: "Join",
-      description: "If there's alignment, you'll be invited to join the Academy and matched with your optimal mastermind group."
+      description: "Once accepted, you'll receive your official member access, including invites to events, member-only content, and your connection to our alumni network."
     }
   ];
 
@@ -46,7 +46,7 @@ const MembershipProcessSection = () => {
           </div>
           
           <div className="mt-12 text-center">
-            <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6">
+            <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/join?invitation_token=a70ffb53792bb9dec38bdaafe659b603c34c5d8e-9d20cbdd-0e46-4990-a7f6-ac66d99bad20', '_blank')}>
               Start your journey
             </Button>
           </div>

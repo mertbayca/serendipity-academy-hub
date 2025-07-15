@@ -1,5 +1,5 @@
-
 import React, { useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import WhyNowSection from '../components/WhyNowSection';
@@ -12,6 +12,8 @@ import TestimonialsSection from '../components/TestimonialsSection';
 import DifferenceSection from '../components/DifferenceSection';
 import WhoForSection from '../components/WhoForSection';
 import MembershipProcessSection from '../components/MembershipProcessSection';
+import CoachingSection from '../components/CoachingSection';
+import InspiringSection from '../components/InspiringSection';
 import Footer from '../components/Footer';
 
 const Index = () => {
@@ -41,6 +43,24 @@ const Index = () => {
     };
   }, []);
 
+  // Scroll to mastermind if ?scroll=mastermind is present
+  const location = useLocation();
+  const navigate = useNavigate();
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (params.get('scroll') === 'mastermind') {
+      setTimeout(() => {
+        const el = document.getElementById('mastermind');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        // Remove the param from the URL
+        params.delete('scroll');
+        navigate({ pathname: '/', search: params.toString() }, { replace: true });
+      }, 100);
+    }
+  }, [location, navigate]);
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -55,6 +75,8 @@ const Index = () => {
       <DifferenceSection />
       <WhoForSection />
       <MembershipProcessSection />
+      <CoachingSection />
+      <InspiringSection />
       <Footer />
     </div>
   );

@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const LearningModulesSection = () => {
@@ -40,8 +39,11 @@ const LearningModulesSection = () => {
       <div className="container">
         <h2 className="section-title">Fuel Your Journey with <span className="text-blue">Focused Learning</span></h2>
         <p className="section-subtitle">
-          Our learning modules are designed to provide practical knowledge you can apply immediately,
-          taught by practitioners who understand the real-world challenges you face.
+        We believe real learning isn't about ticking off tasks; it's about building lasting habits.
+        At Innovators Serendipity Academy, we help you move from one-off training to continuous, meaningful learning that becomes part of who you are as a leader.
+          
+        <br />Alongside between work, mastermind-groups and other engagements, sharpen your skills and expand your mindset with learning modules, held by fantastic experts on topics like:
+
         </p>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
@@ -61,3 +63,5 @@ const LearningModulesSection = () => {
 };
 
 export default LearningModulesSection;
+
+

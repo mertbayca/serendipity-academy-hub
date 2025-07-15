@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 
@@ -14,7 +13,7 @@ const HeroSection = () => {
           loop 
           playsInline
         >
-          <source src="https://cdn.pixabay.com/vimeo/350990038/brainstorming-29458.mp4?width=1280&hash=68b82b0c93f3d254e58118fdc8af59df5850ac40" type="video/mp4" />
+          <source src="./assets/herovideo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black bg-opacity-50"></div>
@@ -27,11 +26,11 @@ const HeroSection = () => {
             <span className="block">Innovators Serendipity</span>
             <span className="hero-text-gradient">Academy</span>
           </h1>
-          <p className="text-xl md:text-2xl mb-4 font-medium">Inspiring Each Other for a Brighter Future</p>
+          <p className="text-xl md:text-2xl mb-4 font-medium">Lead the Future. Grow with Others.</p>
           <p className="text-lg md:text-xl mb-8 opacity-90">
-            Join a powerful community of leaders, innovators, and changemakers ready to grow—together.
+            Join a powerful community of leaders, innovators, and changemakers ready to grow together. Master your mindset, harness AI, and create meaningful impact.
           </p>
-          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6">
+          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/join?invitation_token=a70ffb53792bb9dec38bdaafe659b603c34c5d8e-9d20cbdd-0e46-4990-a7f6-ac66d99bad20', '_blank')}>
             Join a Mastermind Group
           </Button>
         </div>
