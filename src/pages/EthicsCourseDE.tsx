@@ -30,14 +30,14 @@ const modules = [
     teaching: [
       "Ausrichtung an den Prinzipien der Natur für bahnbrechende Ideen",
       "Verbindung mit zukünftigen Bedürfnissen durch intuitive Innovation",
-      "Die 'vier unteren Körper' verstehen: physisch, emotional, mental, spirituell",
+      "Unser gesamtes Wesen verstehen: physisch, emotional, mental, spirituell",
       "Entwicklung einer resilienten Future Mindset",
       "Selbstbewusstseinstechniken für innovative Führungskräfte",
       "Integration natürlicher Ethik in Geschäftspraktiken"
     ],
     practical: [
       "Image Streaming geführte Übung",
-      "Vier-Körper-Selbstbewertung",
+      "Selbstbewertung unserer Präferenzen - physisch, emotional, mental, spirituell",
       "Zukunftsvision Workshop",
       "Naturinspiriertes Innovations-Brainstorming",
       "Persönlicher Führungsentwicklungsplan"
@@ -47,7 +47,7 @@ const modules = [
     icon: <RocketLaunchIcon className="w-8 h-8 text-blue-500 mb-2" />, 
     title: "Modul 3: Servant Leadership - Andere für Wirkung befähigen",
     teaching: [
-      "Prinzipien des Servant Leadership in modernen Organisationen",
+      "Prinzipien der ethischen Führung in modernen Organisationen",
       "Fokus auf Stärkung und Befähigung anderer",
       "Anderen helfen, ihren Lebenszweck zu erreichen",
       "Wie ethische Führung Zusammenarbeit und Innovation fördert",
@@ -55,7 +55,7 @@ const modules = [
       "Wirkung über den Profit hinaus messen"
     ],
     practical: [
-      "Servant Leadership Bewertung",
+      "Ethische Führungsbewertung",
       "Workshop zu Team-Befähigungsstrategien",
       "Ihren Führungseinfluss-Plan erstellen",
       "Peer-Coaching-Übungen",
@@ -108,7 +108,7 @@ const testimonial = {
 const heroInfo = [
   { label: "Startdatum", value: "3. September 2025" },
   { label: "Format", value: "Zwei Terminoptionen" },
-  { label: "Preis", value: "175 CHF x 4 oder 699 CHF Vollzahlung" }
+  { label: "Preis", value: "€250 pro Modul oder €750 für das Gesamtprogramm" }
 ];
 
 const moduleLinks = [
@@ -309,8 +309,8 @@ const EthicsCourseDE = () => (
             <span className="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue text-white text-xs font-bold px-4 py-1 rounded-full shadow-lg">Bester Wert</span>
             <h4 className="text-lg font-semibold text-blue-800 mb-2">Preisoptionen</h4>
             <ul className="text-blue-900 text-base mb-2">
-              <li>Vollzahlung: <span className="font-bold">699 CHF</span></li>
-              <li>Ratenzahlung: <span className="font-bold">175 CHF x 4</span></li>
+              <li>Pro Modul: <span className="font-bold">€250</span></li>
+              <li>Gesamtprogramm: <span className="font-bold">€750</span></li>
             </ul>
           </div>
           <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">

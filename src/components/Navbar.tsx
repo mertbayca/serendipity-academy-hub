@@ -71,8 +71,38 @@ const Navbar = () => {
     }
   };
 
-  const growthPathItems = [
-    { title: "12-Month Mastermind Groups", onClick: goToMastermind },
+  // Navigate to Why Now section
+  const goToWhyNow = () => {
+    setIsMenuOpen(false);
+    if (location.pathname === '/') {
+      setTimeout(() => {
+        const el = document.getElementById('why-now');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      navigate('/?scroll=why-now');
+    }
+  };
+
+  // Navigate to Benefits section
+  const goToBenefits = () => {
+    setIsMenuOpen(false);
+    if (location.pathname === '/') {
+      setTimeout(() => {
+        const el = document.getElementById('what-you-gain');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      navigate('/?scroll=what-you-gain');
+    }
+  };
+
+  const growthPathItems: Array<{title: string; href?: string; onClick?: () => void}> = [
+    { title: "12-Month Mastermind Groups", href: "/mastermind" },
     { title: "Innovation Learning Modules", href: "#learning-modules" },
     { title: "Academy Events", href: "#events" },
     { title: "Custom 1:1 Coaching", href: "#coaching" }
@@ -80,7 +110,7 @@ const Navbar = () => {
 
   const courseItems = [
     { title: "Getting Practical with AI", href: "/ai-course" },
-    { title: "Ethics & Innovation", href: "/ethics-course" }
+    { title: "Ethics as Strategy", href: "/ethics-course" }
   ];
 
   return (
@@ -105,8 +135,8 @@ const Navbar = () => {
         
         {/* Desktop navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <a href="#why-now" className={`transition-colors hover:text-blue ${isScrolled ? 'text-gray-700' : 'text-white'}`}>Why Now</a>
-          <a href="#what-you-gain" className={`transition-colors hover:text-blue ${isScrolled ? 'text-gray-700' : 'text-white'}`}>Benefits</a>
+          <button onClick={goToWhyNow} className={`transition-colors hover:text-blue ${isScrolled ? 'text-gray-700' : 'text-white'}`}>Why Now</button>
+          <button onClick={goToBenefits} className={`transition-colors hover:text-blue ${isScrolled ? 'text-gray-700' : 'text-white'}`}>Benefits</button>
           
           {/* Growth Path Dropdown */}
           <div 
@@ -143,7 +173,16 @@ const Navbar = () => {
                 <div className="absolute -top-4 left-0 w-full h-4" />
                 
                 {growthPathItems.map((item, index) => (
-                  item.onClick ? (
+                  item.href?.startsWith('/') ? (
+                    <Link
+                      key={index}
+                      to={item.href}
+                      className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue transition-colors"
+                      onClick={() => setIsGrowthPathOpen(false)}
+                    >
+                      {item.title}
+                    </Link>
+                  ) : item.onClick ? (
                     <button
                       key={index}
                       className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue transition-colors"
@@ -232,14 +271,23 @@ const Navbar = () => {
       {/* Mobile menu */}
       <div className={`md:hidden overflow-hidden transition-all duration-300 ${isMenuOpen ? 'max-h-screen bg-white' : 'max-h-0'}`}>
         <div className="container mx-auto py-4 flex flex-col space-y-4">
-          <a href="#why-now" className={`transition-colors hover:text-blue ${isMenuOpen ? 'text-gray-800' : (isScrolled ? 'text-gray-700' : 'text-white')}`}>Why Now</a>
-          <a href="#what-you-gain" className={`transition-colors hover:text-blue ${isMenuOpen ? 'text-gray-800' : (isScrolled ? 'text-gray-700' : 'text-white')}`}>Benefits</a>
+          <button onClick={goToWhyNow} className={`transition-colors hover:text-blue text-left ${isMenuOpen ? 'text-gray-800' : (isScrolled ? 'text-gray-700' : 'text-white')}`}>Why Now</button>
+          <button onClick={goToBenefits} className={`transition-colors hover:text-blue text-left ${isMenuOpen ? 'text-gray-800' : (isScrolled ? 'text-gray-700' : 'text-white')}`}>Benefits</button>
           
           {/* Mobile Growth Path Items */}
           <div className="pl-4 border-l-2 border-gray-200">
             <a href="#growth-path" className={`font-semibold mb-2 block ${isMenuOpen ? 'text-gray-800' : (isScrolled ? 'text-gray-700' : 'text-white')}`}>Growth Path</a>
             {growthPathItems.map((item, index) => (
-              item.onClick ? (
+              item.href?.startsWith('/') ? (
+                <Link
+                  key={index}
+                  to={item.href}
+                  className={`block py-2 transition-colors hover:text-blue ${isMenuOpen ? 'text-gray-800' : (isScrolled ? 'text-gray-700' : 'text-white')}`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.title}
+                </Link>
+              ) : item.onClick ? (
                 <button
                   key={index}
                   className={`block w-full text-left py-2 transition-colors hover:text-blue ${isMenuOpen ? 'text-gray-800' : (isScrolled ? 'text-gray-700' : 'text-white')}`}

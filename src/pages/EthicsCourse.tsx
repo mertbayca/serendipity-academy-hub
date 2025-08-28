@@ -30,14 +30,14 @@ const modules = [
     teaching: [
       "Aligning with nature's principles to inspire groundbreaking ideas",
       "Connecting with future needs through intuitive innovation",
-      "Understanding the 'four lower bodies': physical, emotional, mental, spiritual",
+      "Understanding our entire being: physical, emotional, mental, spiritual",
       "Developing a resilient Future Mindset",
       "Self-awareness techniques for innovative leaders",
       "Integrating natural ethics into business practices"
     ],
     practical: [
       "Image streaming guided exercise",
-      "Four bodies self-assessment",
+      "Self-assessment of our preferences - physical, emotional, mental, spiritual",
       "Future visioning workshop",
       "Nature-inspired innovation brainstorming",
       "Personal leadership development plan"
@@ -47,7 +47,7 @@ const modules = [
     icon: <RocketLaunchIcon className="w-8 h-8 text-blue-500 mb-2" />, 
     title: "Module 3: Servant Leadership - Empowering Others for Impact",
     teaching: [
-      "Principles of servant leadership in modern organizations",
+      "Principles of ethical leadership in modern organizations",
       "Focusing on uplifting and empowering others",
       "Helping others achieve their life purpose",
       "How ethical leadership fosters collaboration and innovation",
@@ -55,7 +55,7 @@ const modules = [
       "Measuring impact beyond profit"
     ],
     practical: [
-      "Servant leadership assessment",
+      "Ethical Leadership Assessment",
       "Team empowerment strategies workshop",
       "Creating your leadership impact plan",
       "Peer coaching exercises",
@@ -108,13 +108,13 @@ const testimonial = {
 const heroInfo = [
   { label: "Start Date", value: "September 3, 2025" },
   { label: "Format", value: "Two schedule options" },
-  { label: "Price", value: "175 CHF x 4 or 699 CHF full payment" }
+  { label: "Price", value: "€250 per module or €750 for full program" }
 ];
 
 const moduleLinks = [
-  "https://innovators-serendipity-academy.circle.so/checkout/ethics-and-innovation-1st-moduleethical-foundations-of-innovation-and-leadership",
-  "https://innovators-serendipity-academy.circle.so/checkout/ethics-and-innovation-2nd-module-unlocking-genius-through-natural-ethics-and-self-leadership",
-  "https://innovators-serendipity-academy.circle.so/checkout/ethics-and-innovation-3rd-module-servant-leadership-empowering-others-for-impact"
+  "https://innovators-serendipity-academy.circle.so/checkout/ethics-module-1",
+  "https://innovators-serendipity-academy.circle.so/checkout/ethics-module-2",
+  "https://innovators-serendipity-academy.circle.so/checkout/ethics-module-3"
 ];
 
 const EthicsCourse = () => (
@@ -155,31 +155,36 @@ const EthicsCourse = () => (
         </div>
       </div>
 
-      <div className="container max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-8 relative z-10">
-        <div className="flex-1 flex flex-col items-start justify-center">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-3 text-blue-900 leading-tight">Ethics as Strategy</h1>
-          <h2 className="text-xl md:text-2xl font-semibold mb-4 text-blue-700">Bring Ethics to Life For Long Term Success</h2>
-          
-          <div className="mb-6 max-w-xl space-y-3">
-            <p className="text-base md:text-lg text-blue-800 leading-relaxed">Are you, as a leader, prioritizing profits at the expense of your values, principles, or even your customers?</p>
-            <p className="text-base md:text-lg text-blue-800 leading-relaxed">Could your actions (knowingly or unknowingly) be harming nature and the environment?</p>
-            <p className="text-base md:text-lg text-blue-800 leading-relaxed font-medium">This course offers a chance to reset, adopt a growth mindset, and move forward with integrity, free from guilt and reputational risk.</p>
+      <div className="container max-w-5xl mx-auto px-6 relative z-10">
+        {/* Main Hero Content */}
+        <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
+          <div className="flex-1 flex flex-col items-start justify-center">
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-3 text-blue-900 leading-tight">Ethics as Strategy</h1>
+            <h2 className="text-xl md:text-2xl font-semibold mb-4 text-blue-700">Bring Ethics to Life For Long Term Success</h2>
+            
+            <div className="mb-6 max-w-xl space-y-3">
+              <p className="text-base md:text-lg text-blue-800 leading-relaxed">Are you, as a leader, prioritizing profits at the expense of your values, principles, or even your customers?</p>
+              <p className="text-base md:text-lg text-blue-800 leading-relaxed">Could your actions (knowingly or unknowingly) be harming nature and the environment?</p>
+              <p className="text-base md:text-lg text-blue-800 leading-relaxed font-medium">This course offers a chance to reset, adopt a growth mindset, and move forward with integrity, free from guilt and reputational risk.</p>
+            </div>
+            <div className="flex flex-wrap gap-3 mb-6">
+              {heroInfo.map((item, i) => (
+                <span key={i} className="inline-block bg-white/90 border border-blue-200 text-blue-900 text-sm rounded-full px-4 py-2 font-semibold shadow-sm">
+                  <span className="font-bold">{item.label}:</span> <span className="font-bold">{item.value}</span>
+                </span>
+              ))}
+            </div>
           </div>
-          <div className="flex flex-wrap gap-3 mb-6">
-            {heroInfo.map((item, i) => (
-              <span key={i} className="inline-block bg-white/90 border border-blue-200 text-blue-900 text-sm rounded-full px-4 py-2 font-semibold shadow-sm">
-                <span className="font-bold">{item.label}:</span> <span className="font-bold">{item.value}</span>
-              </span>
-            ))}
+          <div className="flex-1 flex justify-center">
+            <img 
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+              alt="Ethics and Innovation" 
+              className="rounded-xl shadow-lg w-64 h-64 object-cover border-4 border-blue-100"
+            />
           </div>
         </div>
-        <div className="flex-1 flex justify-center">
-          <img 
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-            alt="Ethics and Innovation" 
-            className="rounded-xl shadow-lg w-64 h-64 object-cover border-4 border-blue-100"
-          />
-        </div>
+
+        {/* Butlerapp Course Table - COMMENTED OUT FOR NOW */}
       </div>
     </section>
 
@@ -247,7 +252,7 @@ const EthicsCourse = () => (
           ))}
         </div>
         <div className="text-center mt-12">
-          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-10 py-6 transition-transform duration-200 hover:scale-105 shadow-lg font-bold" onClick={() => window.open('#signup', '_self')}>
+          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-10 py-6 transition-transform duration-200 hover:scale-105 shadow-lg font-bold" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/checkout/ethics-as-strategy', '_blank')}>
             Book Full Program Now
           </Button>
         </div>
@@ -309,8 +314,8 @@ const EthicsCourse = () => (
             <span className="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue text-white text-xs font-bold px-4 py-1 rounded-full shadow-lg">Best Value</span>
             <h4 className="text-lg font-semibold text-blue-800 mb-2">Pricing Options</h4>
             <ul className="text-blue-900 text-base mb-2">
-              <li>Full Payment: <span className="font-bold">699 CHF</span></li>
-              <li>Installment Plan: <span className="font-bold">175 CHF x 4</span></li>
+              <li>Per Module: <span className="font-bold">€250</span></li>
+              <li>Full Program: <span className="font-bold">€750</span></li>
             </ul>
           </div>
           <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
@@ -379,7 +384,7 @@ const EthicsCourse = () => (
         </div>
 
         <div className="text-center">
-          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6 transition-transform duration-200 hover:scale-105 shadow-lg" id="signup" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/checkout/ethics-and-innovation-bundle', '_blank')}>Book Full Program Now</Button>
+          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6 transition-transform duration-200 hover:scale-105 shadow-lg" id="signup" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/checkout/ethics-as-strategy', '_blank')}>Book Full Program Now</Button>
         </div>
       </div>
     </section>

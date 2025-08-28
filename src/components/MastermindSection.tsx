@@ -54,7 +54,7 @@ const MastermindSection = () => {
             </p>
 
             <Link to="/mastermind">
-              <Button className="w-full md:w-auto bg-blue hover:bg-blue-700 text-white">
+              <Button className="w-full md:w-auto bg-blue hover:bg-blue-dark text-white">
                 Discover the Mastermind Experience
               </Button>
             </Link>

@@ -16,6 +16,7 @@ import CoachingSection from '../components/CoachingSection';
 import InspiringSection from '../components/InspiringSection';
 import Footer from '../components/Footer';
 
+
 const Index = () => {
   // Smooth scrolling for anchor links
   useEffect(() => {
@@ -43,14 +44,16 @@ const Index = () => {
     };
   }, []);
 
-  // Scroll to mastermind if ?scroll=mastermind is present
+  // Scroll to sections if ?scroll parameter is present
   const location = useLocation();
   const navigate = useNavigate();
   useEffect(() => {
     const params = new URLSearchParams(location.search);
-    if (params.get('scroll') === 'mastermind') {
+    const scrollTo = params.get('scroll');
+    
+    if (scrollTo) {
       setTimeout(() => {
-        const el = document.getElementById('mastermind');
+        const el = document.getElementById(scrollTo);
         if (el) {
           el.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
