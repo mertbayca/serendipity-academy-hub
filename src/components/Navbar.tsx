@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,10 +13,17 @@ const Navbar = () => {
   const closeTimeoutRef = useRef<NodeJS.Timeout>();
   const location = useLocation();
   const navigate = useNavigate();
+  const isHome = location.pathname === '/';
+  const isHomeDe = location.pathname === '/de';
+  const isGermanContext =
+    isHomeDe ||
+    location.pathname.startsWith('/de/') ||
+    location.pathname.startsWith('/ai-course/de') ||
+    location.pathname.startsWith('/ethics-course/de');
 
   useEffect(() => {
-    // If not on the homepage, always use scrolled (white) navbar for contrast
-    if (location.pathname !== '/') {
+    // If not on either homepage, always use scrolled (white) navbar for contrast
+    if (location.pathname !== '/' && location.pathname !== '/de') {
       setIsScrolled(true);
       return;
     }
@@ -23,6 +31,7 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location.pathname]);
@@ -55,7 +64,7 @@ const Navbar = () => {
 
   // Scroll or navigate to mastermind section
   const goToMastermind = () => {
-    if (location.pathname === '/') {
+    if (isHome || isHomeDe) {
       setIsGrowthPathOpen(false);
       setIsMenuOpen(false);
       setTimeout(() => {
@@ -65,7 +74,7 @@ const Navbar = () => {
         }
       }, 100);
     } else {
-      navigate('/?scroll=mastermind');
+      navigate(isGermanContext ? '/de?scroll=mastermind' : '/?scroll=mastermind');
       setIsGrowthPathOpen(false);
       setIsMenuOpen(false);
     }
@@ -74,7 +83,7 @@ const Navbar = () => {
   // Navigate to Why Now section
   const goToWhyNow = () => {
     setIsMenuOpen(false);
-    if (location.pathname === '/') {
+    if (isHome || isHomeDe) {
       setTimeout(() => {
         const el = document.getElementById('why-now');
         if (el) {
@@ -82,14 +91,14 @@ const Navbar = () => {
         }
       }, 100);
     } else {
-      navigate('/?scroll=why-now');
+      navigate(isGermanContext ? '/de?scroll=why-now' : '/?scroll=why-now');
     }
   };
 
   // Navigate to Benefits section
   const goToBenefits = () => {
     setIsMenuOpen(false);
-    if (location.pathname === '/') {
+    if (isHome || isHomeDe) {
       setTimeout(() => {
         const el = document.getElementById('what-you-gain');
         if (el) {
@@ -97,18 +106,39 @@ const Navbar = () => {
         }
       }, 100);
     } else {
-      navigate('/?scroll=what-you-gain');
+      navigate(isGermanContext ? '/de?scroll=what-you-gain' : '/?scroll=what-you-gain');
     }
   };
 
-  const growthPathItems: Array<{title: string; href?: string; onClick?: () => void}> = [
+  const goToSection = (id: string) => {
+    if (isHome || isHomeDe) {
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    } else {
+      navigate(isGermanContext ? `/de?scroll=${id}` : `/?scroll=${id}`);
+    }
+    setIsGrowthPathOpen(false);
+    setIsMenuOpen(false);
+  };
+
+  const growthPathItems: Array<{title: string; href?: string; onClick?: () => void}> = isHomeDe ? [
+    { title: "12-monatige Mastermind-Gruppen", href: "/mastermind/de" },
+    { title: "Innovations-Lernmodule", onClick: () => goToSection('learning-modules') },
+    { title: "Akademie-Events", onClick: () => goToSection('events') },
+    { title: "Individuelles 1:1 Coaching", onClick: () => goToSection('coaching') }
+  ] : [
     { title: "12-Month Mastermind Groups", href: "/mastermind" },
-    { title: "Innovation Learning Modules", href: "#learning-modules" },
-    { title: "Academy Events", href: "#events" },
-    { title: "Custom 1:1 Coaching", href: "#coaching" }
+    { title: "Innovation Learning Modules", onClick: () => goToSection('learning-modules') },
+    { title: "Academy Events", onClick: () => goToSection('events') },
+    { title: "Custom 1:1 Coaching", onClick: () => goToSection('coaching') }
   ];
 
-  const courseItems = [
+  const courseItems = isGermanContext ? [
+    { title: "Praktisch mit KI arbeiten", href: "/ai-course/de" },
+    { title: "Ethik als Strategie", href: "/ethics-course/de" }
+  ] : [
     { title: "Getting Practical with AI", href: "/ai-course" },
     { title: "Ethics as Strategy", href: "/ethics-course" }
   ];
@@ -116,7 +146,7 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto flex justify-between items-center">
-        <Link to="/">
+        <Link to={isGermanContext ? "/de" : "/"}>
           <img src="/assets/isalogo.png" alt="Innovators Serendipity Academy Logo" className="h-10 w-auto" />
         </Link>
         
@@ -135,8 +165,8 @@ const Navbar = () => {
         
         {/* Desktop navigation */}
         <div className="hidden md:flex items-center space-x-8">
-          <button onClick={goToWhyNow} className={`transition-colors hover:text-blue ${isScrolled ? 'text-gray-700' : 'text-white'}`}>Why Now</button>
-          <button onClick={goToBenefits} className={`transition-colors hover:text-blue ${isScrolled ? 'text-gray-700' : 'text-white'}`}>Benefits</button>
+          <button onClick={goToWhyNow} className={`transition-colors hover:text-blue ${isScrolled ? 'text-gray-700' : 'text-white'}`}>{isGermanContext ? 'Warum jetzt' : 'Why Now'}</button>
+          <button onClick={goToBenefits} className={`transition-colors hover:text-blue ${isScrolled ? 'text-gray-700' : 'text-white'}`}>{isGermanContext ? 'Vorteile' : 'Benefits'}</button>
           
           {/* Growth Path Dropdown */}
           <div 
@@ -150,7 +180,7 @@ const Navbar = () => {
                 href="#growth-path"
                 className={`transition-colors hover:text-blue ${isScrolled ? 'text-gray-700' : 'text-white'}`}
               >
-                Growth Path
+                {isGermanContext ? 'Wachstumspfad' : 'Growth Path'}
               </a>
               <svg 
                 className={`w-4 h-4 transition-transform duration-200 ${isGrowthPathOpen ? 'rotate-180' : ''}`} 
@@ -205,7 +235,8 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Courses Dropdown */}
+          {/* Courses Dropdown */
+          }
           <div 
             ref={coursesDropdownRef}
             className="relative"
@@ -217,7 +248,7 @@ const Navbar = () => {
                 href="#"
                 className={`transition-colors hover:text-blue ${isScrolled ? 'text-gray-700' : 'text-white'}`}
               >
-                Courses
+                {isGermanContext ? 'Kurse' : 'Courses'}
               </a>
               <svg 
                 className={`w-4 h-4 transition-transform duration-200 ${isCoursesOpen ? 'rotate-180' : ''}`} 
@@ -252,16 +283,17 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          
-          <a href="/about" className={`transition-colors hover:text-blue ${isScrolled ? 'text-gray-700' : 'text-white'}`}>Who We Are</a>
+
+          <a href={isGermanContext ? "/de/about" : "/about"} className={`transition-colors hover:text-blue ${isScrolled ? 'text-gray-700' : 'text-white'}`}>{isGermanContext ? 'Wer wir sind' : 'Who We Are'}</a>
           <div className="flex items-center space-x-4">
+            <div className="hidden md:block"><LanguageSwitcher /></div>
             <a
               href="https://innovators-serendipity-academy.circle.so/join?invitation_token=a70ffb53792bb9dec38bdaafe659b603c34c5d8e-9d20cbdd-0e46-4990-a7f6-ac66d99bad20"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Button className="bg-blue hover:bg-blue-dark text-white">
-                Join Our Community Now
+                {isGermanContext ? 'Jetzt der Community beitreten' : 'Join Our Community Now'}
               </Button>
             </a>
           </div>
@@ -271,12 +303,12 @@ const Navbar = () => {
       {/* Mobile menu */}
       <div className={`md:hidden overflow-hidden transition-all duration-300 ${isMenuOpen ? 'max-h-screen bg-white' : 'max-h-0'}`}>
         <div className="container mx-auto py-4 flex flex-col space-y-4">
-          <button onClick={goToWhyNow} className={`transition-colors hover:text-blue text-left ${isMenuOpen ? 'text-gray-800' : (isScrolled ? 'text-gray-700' : 'text-white')}`}>Why Now</button>
-          <button onClick={goToBenefits} className={`transition-colors hover:text-blue text-left ${isMenuOpen ? 'text-gray-800' : (isScrolled ? 'text-gray-700' : 'text-white')}`}>Benefits</button>
+          <button onClick={goToWhyNow} className={`transition-colors hover:text-blue text-left ${isMenuOpen ? 'text-gray-800' : (isScrolled ? 'text-gray-700' : 'text-white')}`}>{isGermanContext ? 'Warum jetzt' : 'Why Now'}</button>
+          <button onClick={goToBenefits} className={`transition-colors hover:text-blue text-left ${isMenuOpen ? 'text-gray-800' : (isScrolled ? 'text-gray-700' : 'text-white')}`}>{isGermanContext ? 'Vorteile' : 'Benefits'}</button>
           
           {/* Mobile Growth Path Items */}
           <div className="pl-4 border-l-2 border-gray-200">
-            <a href="#growth-path" className={`font-semibold mb-2 block ${isMenuOpen ? 'text-gray-800' : (isScrolled ? 'text-gray-700' : 'text-white')}`}>Growth Path</a>
+            <a href="#growth-path" className={`font-semibold mb-2 block ${isMenuOpen ? 'text-gray-800' : (isScrolled ? 'text-gray-700' : 'text-white')}`}>{isGermanContext ? 'Wachstumspfad' : 'Growth Path'}</a>
             {growthPathItems.map((item, index) => (
               item.href?.startsWith('/') ? (
                 <Link
@@ -310,7 +342,7 @@ const Navbar = () => {
 
           {/* Mobile Courses Items */}
           <div className="pl-4 border-l-2 border-gray-200">
-            <span className={`font-semibold mb-2 block ${isMenuOpen ? 'text-gray-800' : (isScrolled ? 'text-gray-700' : 'text-white')}`}>Courses</span>
+            <span className={`font-semibold mb-2 block ${isMenuOpen ? 'text-gray-800' : (isScrolled ? 'text-gray-700' : 'text-white')}`}>{isGermanContext ? 'Kurse' : 'Courses'}</span>
             {courseItems.map((item, index) => (
               <a
                 key={index}
@@ -322,16 +354,19 @@ const Navbar = () => {
               </a>
             ))}
           </div>
+
+          {/* Mobile Language Switcher removed (duplicate) */}
           
-          <a href="/about" className={`transition-colors hover:text-blue ${isMenuOpen ? 'text-gray-800' : (isScrolled ? 'text-gray-700' : 'text-white')}`}>Who We Are</a>
+          <a href={isGermanContext ? "/de/about" : "/about"} className={`transition-colors hover:text-blue ${isMenuOpen ? 'text-gray-800' : (isScrolled ? 'text-gray-700' : 'text-white')}`}>{isGermanContext ? 'Wer wir sind' : 'Who We Are'}</a>
           <div className="flex items-center space-x-4">
+            <LanguageSwitcher />
             <a
               href="https://innovators-serendipity-academy.circle.so/join?invitation_token=a70ffb53792bb9dec38bdaafe659b603c34c5d8e-9d20cbdd-0e46-4990-a7f6-ac66d99bad20"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Button className="bg-blue hover:bg-blue-dark text-white">
-                Join Our Community Now
+                {isGermanContext ? 'Jetzt der Community beitreten' : 'Join Our Community Now'}
               </Button>
             </a>
           </div>

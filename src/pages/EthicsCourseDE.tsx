@@ -140,20 +140,7 @@ const EthicsCourseDE = () => (
         <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-amber-100 rounded-full opacity-20 blur-3xl"></div>
       </div>
 
-      {/* Language Switcher */}
-      <div className="absolute top-16 right-6 z-[100]">
-        <div className="flex items-center space-x-2 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-sm border border-blue-100">
-          <a href="/ethics-course" className="flex items-center space-x-1.5 text-blue-900 hover:text-blue-700 transition-colors">
-            <img src="/assets/flags/gb.svg" alt="English" className="w-4 h-4" />
-            <span>EN</span>
-          </a>
-          <span className="text-blue-900/50">|</span>
-          <span className="flex items-center space-x-1.5 text-blue-900 font-bold">
-            <img src="/assets/flags/de.svg" alt="Deutsch" className="w-4 h-4" />
-            <span>DE</span>
-          </span>
-        </div>
-      </div>
+      {/* Language switcher entfernt: wird in der Navbar angezeigt */}
 
       <div className="container max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-8 relative z-10">
         <div className="flex-1 flex flex-col items-start justify-center">

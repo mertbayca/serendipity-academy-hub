@@ -140,20 +140,7 @@ const EthicsCourse = () => (
         <div className="absolute top-1/3 left-1/4 w-64 h-64 bg-amber-100 rounded-full opacity-20 blur-3xl"></div>
       </div>
 
-      {/* Language Switcher */}
-      <div className="absolute top-16 right-6 z-[100]">
-        <div className="flex items-center space-x-2 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1.5 shadow-sm border border-blue-100">
-          <span className="flex items-center space-x-1.5 text-blue-900 font-bold">
-            <img src="/assets/flags/gb.svg" alt="English" className="w-4 h-4" />
-            <span>EN</span>
-          </span>
-          <span className="text-blue-900/50">|</span>
-          <a href="/ethics-course/de" className="flex items-center space-x-1.5 text-blue-900 hover:text-blue-700 transition-colors">
-            <img src="/assets/flags/de.svg" alt="Deutsch" className="w-4 h-4" />
-            <span>DE</span>
-          </a>
-        </div>
-      </div>
+      {/* Language switcher removed: handled by Navbar */}
 
       <div className="container max-w-5xl mx-auto px-6 relative z-10">
         {/* Main Hero Content */}

@@ -11,6 +11,17 @@ const Events = () => {
   ];
 
   const pastEvents = {
+    "2025": [
+      {
+        title: "The Value of Staying Connected, When the World Is Pulling Us Apart",
+        description: "An evening of meaningful connections and insights with industry leaders.",
+        speaker: "Dean Aragon and Simona Scarpaleggia",
+        date: "May 12, 2025",
+        time: "18:00–20:00 CET",
+        format: "In-person | Free Event | No recordings or photos",
+        image: "./assets/pulling.png"
+      }
+    ],
     "2024": [
       {
         title: "Academy Get Together",
@@ -181,68 +192,25 @@ const Events = () => {
         </div>
       </section>
 
-      {/* Featured Event Section */}
+      {/* No Upcoming Event Notice */}
       <section className="py-16 bg-gray-900 relative">
         <div className="absolute inset-0">
-          <img 
-            src="./assets/pulling.png" 
-            alt="The Value of Staying Connected" 
-            className="w-full h-full object-cover object-center opacity-40"
-          />
           <div className="absolute inset-0 bg-black opacity-60"></div>
         </div>
-        <div className="container max-w-3xl mx-auto px-6 relative z-10 flex justify-center items-center min-h-[400px]">
-          <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12 w-full">
-            <div className="flex items-center gap-2 mb-4">
-              <span className="px-3 py-1 bg-blue text-white text-sm rounded-full">Featured Event</span>
-              <span className="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">Upcoming</span>
+        <div className="container max-w-3xl mx-auto px-6 relative z-10 flex justify-center items-center min-h-[300px]">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-12 w-full text-center">
+            <div className="flex items-center justify-center mb-4">
+              <span className="px-3 py-1 bg-gray-100 text-gray-800 text-sm rounded-full">No Upcoming Events</span>
             </div>
-            <h2 className="text-2xl md:text-4xl font-bold mb-6 text-gray-900">
-              The Value of Staying Connected, When the World Is Pulling Us Apart
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
+              We’ll announce new events soon.
             </h2>
-            <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div className="space-y-4">
-                <div className="flex items-start gap-2">
-                  <span className="text-blue text-xl">📅</span>
-                  <div>
-                    <p className="font-semibold text-base text-gray-900">Date</p>
-                    <p className="text-gray-700">May 12, 2025</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-blue text-xl">🕓</span>
-                  <div>
-                    <p className="font-semibold text-base text-gray-900">Time</p>
-                    <p className="text-gray-700">18:00 – 20:00 CET</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-blue text-xl">📍</span>
-                  <div>
-                    <p className="font-semibold text-base text-gray-900">Location</p>
-                    <p className="text-gray-700">Event space Freiraum<br />Bahnhofstrasse 9, 8001 Zurich<br />(Entrance side Börsenstrasse)</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-blue text-xl">👥</span>
-                  <div>
-                    <p className="font-semibold text-base text-gray-900">Format</p>
-                    <p className="text-gray-700">In-Person Only | Free Event | No recordings or photos permitted</p>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">Speakers</h3>
-                <div className="mb-4">
-                  <p className="font-semibold text-base text-gray-900">Dean Aragon</p>
-                  <p className="text-gray-700 text-sm">CEO of Shell Brands International AG | Board Director | Brand Strategist</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-base text-gray-900">Simona Scarpaleggia</p>
-                  <p className="text-gray-700 text-sm">Former CEO of IKEA Switzerland | Co-Chair, UN High-Level Panel on Women's Economic Empowerment</p>
-                </div>
-              </div>
-            </div>
+            <p className="text-gray-700 mb-6">
+              In the meantime, explore our past events below.
+            </p>
+            <a href="#past-events">
+              <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-6">Explore Past Events</Button>
+            </a>
           </div>
         </div>
       </section>
@@ -263,7 +231,7 @@ const Events = () => {
       </section>
 
       {/* Past Events Section */}
-      <section className="py-16">
+      <section id="past-events" className="py-16">
         <div className="container max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-bold mb-12 text-center">Past Events</h2>
           
