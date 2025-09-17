@@ -33,7 +33,7 @@ const InspiringSection = () => (
         </p>
         <div className="mt-4">
           <a
-            href="https://innovators-serendipity-academy.circle.so/join?invitation_token=a70ffb53792bb9dec38bdaafe659b603c34c5d8e-9d20cbdd-0e46-4990-a7f6-ac66d99bad20"
+            href="https://innovators-serendipity-academy.circle.so/c/welcome/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-blue hover:bg-blue-dark text-white font-medium px-6 py-2 rounded shadow transition"

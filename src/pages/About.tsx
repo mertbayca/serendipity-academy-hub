@@ -64,7 +64,7 @@ const About = () => {
             <div className="md:w-2/3">
               <h3 className="text-2xl font-semibold mb-4">Christian Bennewitz</h3>
               <p className="text-lg text-gray-700 leading-relaxed">
-                Christian Bennewitz brings a rare mix of strategic vision and real-world impact to the Innovators Serendipity Academy board. As a senior sales leader at Salesforce, he helps businesses across Europe harness CRM and AI to build stronger, more human customer relationships. With 20+ years in digital transformation, Christian is passionate about purposeful leadership and authentic growth. He's on a mission to help companies turn tech into trust.
+                Christian Bennewitz brings a rare mix of strategic vision and real-world impact to the Innovators Serendipity Academy board. As a former sales leader at companies such as Salesforce and Epsilon, he helps businesses to use technology to build strong customer relationships. With 20+ years in digital transformation, Christian is passionate about purposeful leadership, authentic growth, and trustful collaboration.
               </p>
             </div>
           </div>
@@ -134,10 +134,10 @@ const About = () => {
         <div className="container max-w-4xl text-center">
           <h2 className="text-3xl font-bold mb-8">Ready to Join the Movement?</h2>
           <div className="flex flex-col md:flex-row justify-center gap-4">
-            <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/join?invitation_token=a70ffb53792bb9dec38bdaafe659b603c34c5d8e-9d20cbdd-0e46-4990-a7f6-ac66d99bad20', '_blank')}>
+            <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/c/welcome/', '_blank')}>
               Join a Mastermind Group
             </Button>
-            <Button className="bg-white border border-blue text-blue hover:bg-blue-50 text-lg px-8 py-6" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/join?invitation_token=a70ffb53792bb9dec38bdaafe659b603c34c5d8e-9d20cbdd-0e46-4990-a7f6-ac66d99bad20', '_blank')}>
+            <Button className="bg-white border border-blue text-blue hover:bg-blue-50 text-lg px-8 py-6" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/c/welcome/', '_blank')}>
               Learn More
             </Button>
           </div>

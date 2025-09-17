@@ -24,7 +24,7 @@ const MembershipProcessSectionDE = () => {
             ))}
           </div>
           <div className="mt-12 text-center">
-            <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/join?invitation_token=a70ffb53792bb9dec38bdaafe659b603c34c5d8e-9d20cbdd-0e46-4990-a7f6-ac66d99bad20', '_blank')}>
+            <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/c/welcome/', '_blank')}>
               Starte deine Reise
             </Button>
           </div>
@@ -35,4 +35,3 @@ const MembershipProcessSectionDE = () => {
 };
 
 export default MembershipProcessSectionDE;
-

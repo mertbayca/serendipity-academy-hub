@@ -106,9 +106,12 @@ const heroInfo = [
 ];
 
 const moduleLinks = [
-  "https://innovators-serendipity-academy.circle.so/checkout/ai-module-1-what-is-ai",
-  "https://innovators-serendipity-academy.circle.so/checkout/ai-module-2-lets-get-practical",
-  "https://innovators-serendipity-academy.circle.so/checkout/ai-module-3-ai-with-intention"
+  // Modul 1
+  "/w#/bookcart?fcourses=module_1_what_is_ai_really",
+  // Modul 2
+  "/w#/bookcart?fcourses=module_2_lets_get_practical",
+  // Modul 3
+  "/w#/bookcart?fcourses=2_module_3_ai_with_intention"
 ];
 
 const AICourseDE = () => (
@@ -132,6 +135,18 @@ const AICourseDE = () => (
         </div>
         <div className="flex-1 flex justify-center">
           <img src="/assets/raquel2.png" alt="Raquel M. Katigbak" className="rounded-xl shadow-lg w-72 h-72 object-cover border-4 border-blue-100" />
+        </div>
+      </div>
+      {/* Butlerapp Kurstabelle */}
+      <div className="container max-w-5xl mx-auto px-6 relative z-10 mt-8">
+        <div className="w-full bg-white/80 backdrop-blur-xl border border-gray-100/50 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+          <div className="mb-4">
+            <h3 className="text-lg font-medium text-gray-900 mb-1">Kurstermine</h3>
+            <p className="text-sm text-gray-500">Wählen Sie Ihre bevorzugten Termine und Module</p>
+          </div>
+          <div className="websail overflow-hidden">
+            <wscourselist className="ws-element" fcourses="getting_practical_with_ai_for_non_techies" data-ftagsnot="intern"></wscourselist>
+          </div>
         </div>
       </div>
     </section>
@@ -200,7 +215,7 @@ const AICourseDE = () => (
           ))}
         </div>
         <div className="text-center mt-12">
-          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-10 py-6 transition-transform duration-200 hover:scale-105 shadow-lg font-bold" onClick={() => window.open('#signup', '_self')}>
+          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-10 py-6 transition-transform duration-200 hover:scale-105 shadow-lg font-bold" onClick={() => window.open('/w#/bookcart?fcourses=getting_practical_with_ai_for_non_techies', '_blank')}>
             Jetzt Gesamtprogramm buchen
           </Button>
         </div>
@@ -327,7 +342,7 @@ const AICourseDE = () => (
         </div>
 
         <div className="text-center">
-          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6 transition-transform duration-200 hover:scale-105 shadow-lg" id="signup" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/checkout/getting-practical-with-ai', '_blank')}>Jetzt Gesamtprogramm buchen</Button>
+          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6 transition-transform duration-200 hover:scale-105 shadow-lg" id="signup" onClick={() => window.open('/w#/bookcart?fcourses=getting_practical_with_ai_for_non_techies', '_blank')}>Jetzt Gesamtprogramm buchen</Button>
         </div>
       </div>
     </section>

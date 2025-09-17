@@ -112,9 +112,12 @@ const heroInfo = [
 ];
 
 const moduleLinks = [
-  "https://innovators-serendipity-academy.circle.so/checkout/ethics-and-innovation-1st-moduleethical-foundations-of-innovation-and-leadership",
-  "https://innovators-serendipity-academy.circle.so/checkout/ethics-and-innovation-2nd-module-unlocking-genius-through-natural-ethics-and-self-leadership",
-  "https://innovators-serendipity-academy.circle.so/checkout/ethics-and-innovation-3rd-module-servant-leadership-empowering-others-for-impact"
+  // Modul 1 (Produktiv)
+  "/w#/bookcart?fcourses=module_1_ethical_foundations_of_innovation_and_leadership",
+  // Modul 2 (Produktiv)
+  "/w#/bookcart?fcourses=module_2_unlocking_genius_through_natural_ethics_and_self_leadership",
+  // Modul 3 (Produktiv)
+  "/w#/bookcart?fcourses=module_3_servant_leadership_empowering_others_for_impact"
 ];
 
 const EthicsCourseDE = () => (
@@ -166,6 +169,23 @@ const EthicsCourseDE = () => (
             alt="Ethik und Innovation" 
             className="rounded-xl shadow-lg w-64 h-64 object-cover border-4 border-blue-100"
           />
+        </div>
+      </div>
+
+      {/* Butlerapp Kurstabelle */}
+      <div className="container max-w-5xl mx-auto px-6 relative z-10">
+        <div className="w-full bg-white/80 backdrop-blur-xl border border-gray-100/50 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] transition-all duration-500 mt-8">
+          <div className="mb-6">
+            <h3 className="text-lg font-medium text-gray-900 mb-1">Kurstermine</h3>
+            <p className="text-sm text-gray-500">Wählen Sie Ihre bevorzugten Termine und Module</p>
+          </div>
+          <div className="websail overflow-hidden">
+            <wscourselist
+              className="ws-element"
+              fcourses="ethics_as_strategy"
+              data-ftagsnot="intern"
+            ></wscourselist>
+          </div>
         </div>
       </div>
     </section>
@@ -234,7 +254,7 @@ const EthicsCourseDE = () => (
           ))}
         </div>
         <div className="text-center mt-12">
-          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-10 py-6 transition-transform duration-200 hover:scale-105 shadow-lg font-bold" onClick={() => window.open('#signup', '_self')}>
+          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-10 py-6 transition-transform duration-200 hover:scale-105 shadow-lg font-bold" onClick={() => window.open('/w#/bookcart?fcourses=full_course', '_blank')}>
             Jetzt Gesamtprogramm buchen
           </Button>
         </div>
@@ -366,7 +386,7 @@ const EthicsCourseDE = () => (
         </div>
 
         <div className="text-center">
-          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6 transition-transform duration-200 hover:scale-105 shadow-lg" id="signup" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/checkout/ethics-and-innovation-bundle', '_blank')}>Jetzt Gesamtprogramm buchen</Button>
+          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6 transition-transform duration-200 hover:scale-105 shadow-lg" id="signup" onClick={() => window.open('/w#/bookcart?fcourses=full_course', '_blank')}>Jetzt Gesamtprogramm buchen</Button>
         </div>
       </div>
     </section>

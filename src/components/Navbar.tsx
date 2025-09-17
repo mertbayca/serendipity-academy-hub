@@ -244,12 +244,13 @@ const Navbar = () => {
             onMouseLeave={handleCoursesMouseLeave}
           >
             <div className="flex items-center space-x-1">
-              <a 
-                href="#"
+              <Link
+                to="/courses"
                 className={`transition-colors hover:text-blue ${isScrolled ? 'text-gray-700' : 'text-white'}`}
+                onClick={() => setIsCoursesOpen(false)}
               >
                 {isGermanContext ? 'Kurse' : 'Courses'}
-              </a>
+              </Link>
               <svg 
                 className={`w-4 h-4 transition-transform duration-200 ${isCoursesOpen ? 'rotate-180' : ''}`} 
                 fill="none" 
@@ -288,7 +289,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-4">
             <div className="hidden md:block"><LanguageSwitcher /></div>
             <a
-              href="https://innovators-serendipity-academy.circle.so/join?invitation_token=a70ffb53792bb9dec38bdaafe659b603c34c5d8e-9d20cbdd-0e46-4990-a7f6-ac66d99bad20"
+              href="https://innovators-serendipity-academy.circle.so/c/welcome/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -342,7 +343,13 @@ const Navbar = () => {
 
           {/* Mobile Courses Items */}
           <div className="pl-4 border-l-2 border-gray-200">
-            <span className={`font-semibold mb-2 block ${isMenuOpen ? 'text-gray-800' : (isScrolled ? 'text-gray-700' : 'text-white')}`}>{isGermanContext ? 'Kurse' : 'Courses'}</span>
+            <Link
+              to="/courses"
+              className={`font-semibold mb-2 block transition-colors hover:text-blue ${isMenuOpen ? 'text-gray-800' : (isScrolled ? 'text-gray-700' : 'text-white')}`}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {isGermanContext ? 'Alle Kurse' : 'Courses Overview'}
+            </Link>
             {courseItems.map((item, index) => (
               <a
                 key={index}
@@ -361,7 +368,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-4">
             <LanguageSwitcher />
             <a
-              href="https://innovators-serendipity-academy.circle.so/join?invitation_token=a70ffb53792bb9dec38bdaafe659b603c34c5d8e-9d20cbdd-0e46-4990-a7f6-ac66d99bad20"
+              href="https://innovators-serendipity-academy.circle.so/c/welcome/"
               target="_blank"
               rel="noopener noreferrer"
             >

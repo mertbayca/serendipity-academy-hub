@@ -67,18 +67,6 @@ const modules = [
 const sessions = [
   {
     id: 1,
-    title: 'September Sessions',
-    month: 'September 2025',
-    dates: [
-      { date: 'September 3', day: 'Wed' },
-      { date: 'September 10', day: 'Wed' },
-      { date: 'September 17', day: 'Wed' }
-    ],
-    timeslots: ['08:00-09:00 CET', '17:00-18:00 CET'],
-    isPopular: true
-  },
-  {
-    id: 2,
     title: 'November Sessions',
     month: 'November 2025',
     dates: [
@@ -87,7 +75,7 @@ const sessions = [
       { date: 'November 19', day: 'Wed' }
     ],
     timeslots: ['08:00-09:00 CET', '17:00-18:00 CET'],
-    isPopular: false
+    isPopular: true
   }
 ];
 
@@ -106,15 +94,18 @@ const testimonial = {
 };
 
 const heroInfo = [
-  { label: "Start Date", value: "September 3, 2025" },
+  { label: "Start Date", value: "November 5, 2025" },
   { label: "Format", value: "Two schedule options" },
   { label: "Price", value: "€250 per module or €750 for full program" }
 ];
 
 const moduleLinks = [
-  "https://innovators-serendipity-academy.circle.so/checkout/ethics-module-1",
-  "https://innovators-serendipity-academy.circle.so/checkout/ethics-module-2",
-  "https://innovators-serendipity-academy.circle.so/checkout/ethics-module-3"
+  // Module 1 (production)
+  "/w#/bookcart?fcourses=module_1_ethical_foundations_of_innovation_and_leadership",
+  // Module 2 (production)
+  "/w#/bookcart?fcourses=module_2_unlocking_genius_through_natural_ethics_and_self_leadership",
+  // Module 3 (production)
+  "/w#/bookcart?fcourses=module_3_servant_leadership_empowering_others_for_impact"
 ];
 
 const EthicsCourse = () => (
@@ -171,7 +162,20 @@ const EthicsCourse = () => (
           </div>
         </div>
 
-        {/* Butlerapp Course Table - COMMENTED OUT FOR NOW */}
+        {/* Butlerapp Course Table */}
+        <div className="w-full bg-white/80 backdrop-blur-xl border border-gray-100/50 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] transition-all duration-500 mt-8">
+          <div className="mb-6">
+            <h3 className="text-lg font-medium text-gray-900 mb-1">Book Your Course</h3>
+            <p className="text-sm text-gray-500">Select your preferred dates and modules</p>
+          </div>
+          <div className="websail overflow-hidden">
+            <wscourselist
+              className="ws-element"
+              fcourses="ethics_as_strategy"
+              data-ftagsnot="intern"
+            ></wscourselist>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -239,7 +243,7 @@ const EthicsCourse = () => (
           ))}
         </div>
         <div className="text-center mt-12">
-          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-10 py-6 transition-transform duration-200 hover:scale-105 shadow-lg font-bold" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/checkout/ethics-as-strategy', '_blank')}>
+          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-10 py-6 transition-transform duration-200 hover:scale-105 shadow-lg font-bold" onClick={() => window.open('/w#/bookcart?fcourses=full_course', '_blank')}>
             Book Full Program Now
           </Button>
         </div>
@@ -371,7 +375,7 @@ const EthicsCourse = () => (
         </div>
 
         <div className="text-center">
-          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6 transition-transform duration-200 hover:scale-105 shadow-lg" id="signup" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/checkout/ethics-as-strategy', '_blank')}>Book Full Program Now</Button>
+          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6 transition-transform duration-200 hover:scale-105 shadow-lg" id="signup" onClick={() => window.open('/w#/bookcart?fcourses=full_course', '_blank')}>Book Full Program Now</Button>
         </div>
       </div>
     </section>

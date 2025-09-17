@@ -22,7 +22,7 @@ const HeroSectionDE = () => {
           <p className="text-lg md:text-xl mb-8 opacity-90">
             Schließe dich einer starken Community von Führungskräften, Innovator:innen und Changemakern an. Entwickle die richtige Haltung, nutze KI sinnvoll und wirke mit Bedeutung.
           </p>
-          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/join?invitation_token=a70ffb53792bb9dec38bdaafe659b603c34c5d8e-9d20cbdd-0e46-4990-a7f6-ac66d99bad20', '_blank')}>
+          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/c/welcome/', '_blank')}>
             Einer Mastermind‑Gruppe beitreten
           </Button>
         </div>
@@ -38,4 +38,3 @@ const HeroSectionDE = () => {
 };
 
 export default HeroSectionDE;
-

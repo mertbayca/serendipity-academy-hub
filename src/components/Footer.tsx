@@ -56,8 +56,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li className="text-gray-400">office@innovators-serendipity.com</li>
               <li className="text-gray-400">+41799490558</li>
-              <li className="text-gray-400">Industriestrasse, 57<br /> Walliselle
-              n, ZH 8304, CH</li>
+              <li className="text-gray-400">Industriestrasse 57<br />Wallisellen, ZH 8304, CH</li>
             </ul>
           </div>
         </div>
@@ -65,8 +64,8 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-10 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">© 2025 Innovators Serendipity Academy. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a>
+            <a href="/datenschutz" className="text-gray-400 hover:text-white transition-colors text-sm">Datenschutz</a>
+            <a href="/terms-of-service" className="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a>
             <a href="#" className="text-gray-400 hover:text-white transition-colors text-sm">Cookie Policy</a>
           </div>
         </div>

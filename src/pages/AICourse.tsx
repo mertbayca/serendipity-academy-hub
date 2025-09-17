@@ -63,17 +63,6 @@ const modules = [
 const sessions = [
   {
     id: 1,
-    month: 'September 2025',
-    dates: [
-      { date: 'September 11', day: 'Wed' },
-      { date: 'September 18', day: 'Wed' }, 
-      { date: 'September 25', day: 'Wed' }
-    ],
-    timeslots: ['12:00–13:00 CET', '17:00–18:00 CET'],
-    isPopular: true
-  },
-  {
-    id: 2,
     month: 'November 2025',
     dates: [
       { date: 'November 13', day: 'Thu' },
@@ -81,7 +70,7 @@ const sessions = [
       { date: 'November 27', day: 'Thu' }
     ],
     timeslots: ['12:00–13:00 CET', '17:00–18:00 CET'],
-    isPopular: false
+    isPopular: true
   }
 ];
 
@@ -100,15 +89,18 @@ const testimonial = {
 };
 
 const heroInfo = [
-  { label: "Start Date", value: "September 11, 2025" },
+  { label: "Start Date", value: "November 13, 2025" },
   { label: "Timeslots", value: "12:00–13:00 or 17:00–18:00 CET" },
   { label: "Price", value: "€299 per module or €800 for full program" },
 ];
 
 const moduleLinks = [
-  "https://innovators-serendipity-academy.circle.so/checkout/ai-module-1-what-is-ai",
-  "https://innovators-serendipity-academy.circle.so/checkout/ai-module-2-lets-get-practical",
-  "https://innovators-serendipity-academy.circle.so/checkout/ai-module-3-ai-with-intention"
+  // Module 1
+  "/w#/bookcart?fcourses=module_1_what_is_ai_really",
+  // Module 2
+  "/w#/bookcart?fcourses=module_2_lets_get_practical",
+  // Module 3
+  "/w#/bookcart?fcourses=2_module_3_ai_with_intention"
 ];
 
 const AICourse = () => (
@@ -132,6 +124,18 @@ const AICourse = () => (
         </div>
         <div className="flex-1 flex justify-center">
           <img src="/assets/raquel2.png" alt="Raquel M. Katigbak" className="rounded-xl shadow-lg w-72 h-72 object-cover border-4 border-blue-100" />
+        </div>
+      </div>
+      {/* Butlerapp Course Table */}
+      <div className="container max-w-5xl mx-auto px-6 relative z-10 mt-8">
+        <div className="w-full bg-white/80 backdrop-blur-xl border border-gray-100/50 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
+          <div className="mb-4">
+            <h3 className="text-lg font-medium text-gray-900 mb-1">Book Your Course</h3>
+            <p className="text-sm text-gray-500">Select your preferred dates and modules</p>
+          </div>
+          <div className="websail overflow-hidden">
+            <wscourselist className="ws-element" fcourses="getting_practical_with_ai_for_non_techies" data-ftagsnot="intern"></wscourselist>
+          </div>
         </div>
       </div>
     </section>
@@ -200,7 +204,7 @@ const AICourse = () => (
           ))}
         </div>
         <div className="text-center mt-12">
-          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-10 py-6 transition-transform duration-200 hover:scale-105 shadow-lg font-bold" onClick={() => window.open('#signup', '_self')}>
+          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-10 py-6 transition-transform duration-200 hover:scale-105 shadow-lg font-bold" onClick={() => window.open('/w#/bookcart?fcourses=getting_practical_with_ai_for_non_techies', '_blank')}>
             Book Full Program Now
           </Button>
         </div>
@@ -327,7 +331,7 @@ const AICourse = () => (
         </div>
 
         <div className="text-center">
-          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6 transition-transform duration-200 hover:scale-105 shadow-lg" id="signup" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/checkout/getting-practical-with-ai', '_blank')}>Book Full Program Now</Button>
+          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6 transition-transform duration-200 hover:scale-105 shadow-lg" id="signup" onClick={() => window.open('/w#/bookcart?fcourses=getting_practical_with_ai_for_non_techies', '_blank')}>Book Full Program Now</Button>
         </div>
       </div>
     </section>

@@ -30,7 +30,7 @@ const HeroSection = () => {
           <p className="text-lg md:text-xl mb-8 opacity-90">
             Join a powerful community of leaders, innovators, and changemakers ready to grow together. Master your mindset, harness AI, and create meaningful impact.
           </p>
-          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/join?invitation_token=a70ffb53792bb9dec38bdaafe659b603c34c5d8e-9d20cbdd-0e46-4990-a7f6-ac66d99bad20', '_blank')}>
+          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/c/welcome/', '_blank')}>
             Join a Mastermind Group
           </Button>
         </div>

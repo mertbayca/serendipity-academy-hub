@@ -130,10 +130,10 @@ const AboutDE = () => {
         <div className="container max-w-4xl text-center">
           <h2 className="text-3xl font-bold mb-8">Bereit, dich anzuschließen?</h2>
           <div className="flex flex-col md:flex-row justify-center gap-4">
-            <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/join?invitation_token=a70ffb53792bb9dec38bdaafe659b603c34c5d8e-9d20cbdd-0e46-4990-a7f6-ac66d99bad20', '_blank')}>
+            <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/c/welcome/', '_blank')}>
               Einer Mastermind‑Gruppe beitreten
             </Button>
-            <Button className="bg-white border border-blue text-blue hover:bg-blue-50 text-lg px-8 py-6" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/join?invitation_token=a70ffb53792bb9dec38bdaafe659b603c34c5d8e-9d20cbdd-0e46-4990-a7f6-ac66d99bad20', '_blank')}>
+            <Button className="bg-white border border-blue text-blue hover:bg-blue-50 text-lg px-8 py-6" onClick={() => window.open('https://innovators-serendipity-academy.circle.so/c/welcome/', '_blank')}>
               Mehr erfahren
             </Button>
           </div>
@@ -144,4 +144,3 @@ const AboutDE = () => {
 };
 
 export default AboutDE;
-
