@@ -46,7 +46,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/serendipity-academy-hub">
         <GATracker />
         <Routes>
           <Route path="/" element={<Index />} />
