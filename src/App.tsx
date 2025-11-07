@@ -14,6 +14,8 @@ import AICourse from "./pages/AICourse";
 import AICourseDE from "./pages/AICourseDE";
 import EthicsCourse from "./pages/EthicsCourse";
 import EthicsCourseDE from "./pages/EthicsCourseDE";
+import StumblingBlocksCourse from "./pages/StumblingBlocksCourse";
+import StumblingBlocksCourseDE from "./pages/StumblingBlocksCourseDE";
 import IndexDE from "./pages/IndexDE";
 import WsRoot from "./pages/WsRoot";
 import AboutDE from "./pages/AboutDE";
@@ -58,6 +60,8 @@ const App = () => (
           <Route path="/ai-course/de" element={<AICourseDE />} />
           <Route path="/ethics-course" element={<EthicsCourse />} />
           <Route path="/ethics-course/de" element={<EthicsCourseDE />} />
+          <Route path="/stumbling-blocks" element={<StumblingBlocksCourse />} />
+          <Route path="/stumbling-blocks/de" element={<StumblingBlocksCourseDE />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
           <Route path="/courses" element={<Courses />} />

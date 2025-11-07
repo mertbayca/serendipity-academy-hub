@@ -21,8 +21,13 @@ const Courses = () => {
               <h2 className="text-2xl font-semibold text-blue-900 mb-1">All Available Courses</h2>
               <p className="text-sm text-gray-500">Powered by Butlerapp · Live updates refreshed automatically</p>
             </div>
-            <div className="websail overflow-hidden">
-              <wscourselist className="ws-element" data-ftagsnot="intern"></wscourselist>
+            <div className="websail">
+              <wscourselist
+                className="ws-element"
+                data-ftagsnot="intern"
+                data-columns="course,place,price,from,to,info,infolink,remaining,booklink"
+                data-fixed-columns="course,place,booklink"
+              ></wscourselist>
             </div>
           </div>
         </section>

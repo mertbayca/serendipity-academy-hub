@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import DiscountBanner from '@/components/DiscountBanner';
 import { CheckCircleIcon, LightBulbIcon, Cog6ToothIcon, RocketLaunchIcon, UserGroupIcon, ClockIcon } from '@heroicons/react/24/solid';
 
 const modules = [
@@ -87,16 +88,9 @@ const outcomes = [
   { icon: <CheckCircleIcon className="w-6 h-6 text-green-500 mr-2" />, text: "Fostering sustainable innovation" }
 ];
 
-const testimonial = {
-  quote: "This course transformed how I approach innovation. I now lead with purpose and see the profound impact ethical leadership has on my team and our results.",
-  author: "Marcus T.",
-  role: "Innovation Director, Geneva"
-};
-
 const heroInfo = [
   { label: "Start Date", value: "November 5, 2025" },
-  { label: "Format", value: "Two schedule options" },
-  { label: "Price", value: "€250 per module or €750 for full program" }
+  { label: "Format", value: "Two schedule options" }
 ];
 
 const moduleLinks = [
@@ -145,14 +139,21 @@ const EthicsCourse = () => (
               <p className="text-base md:text-lg text-blue-800 leading-relaxed">Could your actions (knowingly or unknowingly) be harming nature and the environment?</p>
               <p className="text-base md:text-lg text-blue-800 leading-relaxed font-medium">This course offers a chance to reset, adopt a growth mindset, and move forward with integrity, free from guilt and reputational risk.</p>
             </div>
-            <div className="flex flex-wrap gap-3 mb-6">
-              {heroInfo.map((item, i) => (
-                <span key={i} className="inline-block bg-white/90 border border-blue-200 text-blue-900 text-sm rounded-full px-4 py-2 font-semibold shadow-sm">
-                  <span className="font-bold">{item.label}:</span> <span className="font-bold">{item.value}</span>
-                </span>
-              ))}
-            </div>
+          <div className="flex flex-wrap gap-3 mb-6">
+            {heroInfo.map((item, i) => (
+              <span key={i} className="inline-block bg-white/90 border border-blue-200 text-blue-900 text-sm rounded-full px-4 py-2 font-semibold shadow-sm">
+                <span className="font-bold">{item.label}:</span> <span className="font-bold">{item.value}</span>
+              </span>
+            ))}
           </div>
+          <DiscountBanner
+            title="Early Bird: Save 25% on the full program"
+            description="Enroll before 30 November to lock in 25% off our upcoming sessions."
+            code="EB2025"
+            validity="Valid through 30 Nov 2025"
+            className="mt-2"
+          />
+        </div>
           <div className="flex-1 flex justify-center">
             <img 
               src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
@@ -163,18 +164,14 @@ const EthicsCourse = () => (
         </div>
 
         {/* Butlerapp Course Table */}
-        <div className="w-full bg-white/80 backdrop-blur-xl border border-gray-100/50 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_40px_rgb(0,0,0,0.08)] transition-all duration-500 mt-8">
-          <div className="mb-6">
-            <h3 className="text-lg font-medium text-gray-900 mb-1">Book Your Course</h3>
-            <p className="text-sm text-gray-500">Select your preferred dates and modules</p>
-          </div>
-          <div className="websail overflow-hidden">
-            <wscourselist
-              className="ws-element"
-              fcourses="ethics_as_strategy"
-              data-ftagsnot="intern"
-            ></wscourselist>
-          </div>
+        <div className="mt-8">
+          <wscourselist
+            className="ws-element"
+            fcourses="ethics_as_strategy"
+            data-ftagsnot="intern"
+            data-columns="course,place,price,from,to,info,infolink,remaining,booklink"
+            data-fixed-columns="course,place,booklink"
+          ></wscourselist>
         </div>
       </div>
     </section>
@@ -262,20 +259,6 @@ const EthicsCourse = () => (
       </div>
     </section>
 
-    {/* Testimonial */}
-    <section className="py-10 bg-gradient-to-r from-blue-100 to-blue-50">
-      <div className="container max-w-2xl mx-auto px-6">
-        <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center border border-blue-100">
-          <svg className="w-10 h-10 text-blue-300 mb-4" fill="currentColor" viewBox="0 0 32 32"><path d="M10.722 6.052c-5.607 2.055-9.294 7.148-9.294 12.948v7h7v-7h-3.788c0-3.556 2.214-6.685 5.442-7.905l.64-.247v-4.796zm13 0c-5.607 2.055-9.294 7.148-9.294 12.948v7h7v-7h-3.788c0-3.556 2.214-6.685 5.442-7.905l.64-.247v-4.796z" /></svg>
-          <p className="text-gray-700 italic mb-4">"{testimonial.quote}"</p>
-          <div>
-            <p className="font-semibold text-blue-900">{testimonial.author}</p>
-            <p className="text-gray-500 text-sm">{testimonial.role}</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     {/* About Instructor */}
     <section className="py-12 bg-gray-50">
       <div className="container max-w-4xl mx-auto px-6 flex flex-col md:flex-row items-center gap-10">
@@ -294,30 +277,19 @@ const EthicsCourse = () => (
       </div>
     </section>
 
-    {/* Pricing & Dates */}
+    {/* Dates */}
     <section className="py-12 bg-white">
       <div className="container max-w-6xl mx-auto px-6">
-        <h2 className="text-2xl font-bold text-center mb-8 text-blue-900">Pricing & Dates</h2>
-        
-        {/* Pricing Cards */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-blue-50 rounded-xl p-6 border-4 border-blue-300 shadow-xl relative">
-            <span className="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue text-white text-xs font-bold px-4 py-1 rounded-full shadow-lg">Best Value</span>
-            <h4 className="text-lg font-semibold text-blue-800 mb-2">Pricing Options</h4>
-            <ul className="text-blue-900 text-base mb-2">
-              <li>Per Module: <span className="font-bold">€250</span></li>
-              <li>Full Program: <span className="font-bold">€750</span></li>
-            </ul>
-          </div>
-          <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
-            <h4 className="text-lg font-semibold text-blue-800 mb-2">What's Included</h4>
-            <ul className="text-blue-900 text-base space-y-1">
-              <li>• 3 transformative sessions</li>
-              <li>• Practical ethical frameworks</li>
-              <li>• Leadership development tools</li>
-              <li>• Lifetime access to materials</li>
-            </ul>
-          </div>
+        <h2 className="text-2xl font-bold text-center mb-8 text-blue-900">Dates & Schedule</h2>
+
+        <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-12">
+          <h4 className="text-lg font-semibold text-blue-800 mb-2">What's Included</h4>
+          <ul className="text-blue-900 text-base space-y-1">
+            <li>• 3 transformative sessions</li>
+            <li>• Practical ethical frameworks</li>
+            <li>• Leadership development tools</li>
+            <li>• Lifetime access to materials</li>
+          </ul>
         </div>
 
         {/* Schedule Selection */}

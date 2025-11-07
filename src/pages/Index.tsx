@@ -6,9 +6,9 @@ import WhyNowSection from '../components/WhyNowSection';
 import WhatYouGainSection from '../components/WhatYouGainSection';
 import GrowthPathSection from '../components/GrowthPathSection';
 import MastermindSection from '../components/MastermindSection';
+import CoursesShowcaseSection from '../components/CoursesShowcaseSection';
 import LearningModulesSection from '../components/LearningModulesSection';
 import EventsSection from '../components/EventsSection';
-import TestimonialsSection from '../components/TestimonialsSection';
 import DifferenceSection from '../components/DifferenceSection';
 import WhoForSection from '../components/WhoForSection';
 import MembershipProcessSection from '../components/MembershipProcessSection';
@@ -72,9 +72,9 @@ const Index = () => {
       <WhatYouGainSection />
       <GrowthPathSection />
       <MastermindSection />
+      <CoursesShowcaseSection />
       <LearningModulesSection />
       <EventsSection />
-      <TestimonialsSection />
       <DifferenceSection />
       <WhoForSection />
       <MembershipProcessSection />

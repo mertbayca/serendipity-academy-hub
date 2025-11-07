@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import DiscountBanner from '@/components/DiscountBanner';
 import { Button } from '@/components/ui/button';
 import { CheckCircleIcon, LightBulbIcon, Cog6ToothIcon, RocketLaunchIcon, UserGroupIcon, ClockIcon } from '@heroicons/react/24/solid';
 
@@ -63,17 +64,6 @@ const modules = [
 const sessions = [
   {
     id: 1,
-    month: 'September 2025',
-    dates: [
-      { date: '11. September', day: 'Mi' },
-      { date: '18. September', day: 'Mi' }, 
-      { date: '25. September', day: 'Mi' }
-    ],
-    timeslots: ['12:00–13:00 MEZ', '17:00–18:00 MEZ'],
-    isPopular: true
-  },
-  {
-    id: 2,
     month: 'November 2025',
     dates: [
       { date: '13. November', day: 'Do' },
@@ -81,7 +71,7 @@ const sessions = [
       { date: '27. November', day: 'Do' }
     ],
     timeslots: ['12:00–13:00 MEZ', '17:00–18:00 MEZ'],
-    isPopular: false
+    isPopular: true
   }
 ];
 
@@ -94,15 +84,14 @@ const outcomes = [
 ];
 
 const testimonial = {
-  quote: "Ich hätte nie gedacht, dass ich KI bei der Arbeit einsetzen würde, aber dieser Kurs hat es einfach und unterhaltsam gemacht. Jetzt nutze ich ChatGPT wöchentlich für Berichte und Brainstorming!",
-  author: "Anna S.",
-  role: "Projektmanagerin, Zürich"
+  quote: "Der AI-Kurs von Innovators Serendipity war ein Gamechanger für mich! Ich habe so viele praxisnahe Tipps mitgenommen, die ich sofort umsetzen konnte – besonders fürs kreative Arbeiten. Dank der klaren Anleitungen kann ich jetzt nicht nur gezielter prompten, sondern setze KI aktiv für mein eigenes Buchprojekt und meine Business-Ideen ein. Absolute Empfehlung für alle, die KI kreativ und strategisch nutzen wollen!",
+  author: "Simone M.",
+  role: "Co-Founder"
 };
 
 const heroInfo = [
-  { label: "Startdatum", value: "11. September 2025" },
-  { label: "Zeitfenster", value: "12:00–13:00 oder 17:00–18:00 MEZ" },
-  { label: "Preis", value: "€299 pro Modul oder €800 für das Gesamtprogramm" }
+  { label: "Startdatum", value: "13. November 2025" },
+  { label: "Zeitfenster", value: "12:00–13:00 oder 17:00–18:00 MEZ" }
 ];
 
 const moduleLinks = [
@@ -122,16 +111,24 @@ const AICourseDE = () => (
       <svg className="absolute left-0 top-0 w-full h-full z-0" style={{opacity:0.18}} viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#3b82f6" fillOpacity="1" d="M0,160L60,170.7C120,181,240,203,360,197.3C480,192,600,160,720,133.3C840,107,960,85,1080,101.3C1200,117,1320,171,1380,197.3L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
       <div className="container max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12 relative z-10">
         <div className="flex-1 flex flex-col items-start justify-center">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-blue-900 leading-tight">Praktisch mit KI arbeiten</h1>
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-blue-700">Für Nicht-Techniker</h2>
-          <p className="text-lg md:text-xl text-blue-800 mb-8 max-w-xl leading-relaxed font-light">Ein praxisnaher, jargonfreier Kurs für Fachleute, die von KI-Verwirrung zu KI-Selbstvertrauen gelangen möchten.</p>
-          <div className="flex flex-wrap gap-4 mb-8">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-blue-900 leading-tight">Lassen Sie sich inspirieren <span className="block">von KI</span></h1>
+          <p className="text-lg md:text-xl text-blue-800 mb-3 max-w-xl leading-relaxed">Entwickeln Sie Ihre Ideen weiter, indem Sie KI einsetzen.</p>
+          <p className="text-lg md:text-xl text-blue-800 mb-3 max-w-xl leading-relaxed">Die meisten von uns kennen KI-Tools und haben sie ausprobiert. Dieser Kurs richtet sich an Fachleute, die Inspiration suchen: Was lässt sich mit KI noch tun? Wie kann sie Innovationen vorantreiben? Wie spart sie Zeit bei alltäglichen Aufgaben?</p>
+          <p className="text-lg md:text-xl text-blue-700 mb-8 max-w-xl leading-relaxed font-semibold">Lassen Sie sich inspirieren und nehmen Sie an unserem November-Kurs teil!</p>
+          <div className="flex flex-wrap gap-4 mb-6">
             {heroInfo.map((item, i) => (
               <span key={i} className="inline-block bg-white/90 border border-blue-200 text-blue-900 text-sm md:text-base rounded-full px-5 py-2 font-semibold shadow-sm">
                 <span className="font-bold">{item.label}:</span> <span className="font-bold">{item.value}</span>
               </span>
             ))}
           </div>
+          <DiscountBanner
+            title="Frühbucher: Spare 25 % auf das Gesamtprogramm"
+            description="Melden Sie sich bis zum 30. November an und sichern Sie sich 25 % Rabatt auf unsere kommenden Sessions."
+            code="EB2025"
+            validity="Gültig bis 30. Nov 2025"
+            className="mt-2"
+          />
         </div>
         <div className="flex-1 flex justify-center">
           <img src="/assets/raquel2.png" alt="Raquel M. Katigbak" className="rounded-xl shadow-lg w-72 h-72 object-cover border-4 border-blue-100" />
@@ -139,15 +136,13 @@ const AICourseDE = () => (
       </div>
       {/* Butlerapp Kurstabelle */}
       <div className="container max-w-5xl mx-auto px-6 relative z-10 mt-8">
-        <div className="w-full bg-white/80 backdrop-blur-xl border border-gray-100/50 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-          <div className="mb-4">
-            <h3 className="text-lg font-medium text-gray-900 mb-1">Kurstermine</h3>
-            <p className="text-sm text-gray-500">Wählen Sie Ihre bevorzugten Termine und Module</p>
-          </div>
-          <div className="websail overflow-hidden">
-            <wscourselist className="ws-element" fcourses="getting_practical_with_ai_for_non_techies" data-ftagsnot="intern"></wscourselist>
-          </div>
-        </div>
+        <wscourselist
+          className="ws-element"
+          fcourses="getting_practical_with_ai_for_non_techies"
+          data-ftagsnot="intern"
+          data-columns="course,place,price,from,to,info,infolink,remaining,booklink"
+          data-fixed-columns="course,place,booklink"
+        ></wscourselist>
       </div>
     </section>
 
@@ -215,7 +210,7 @@ const AICourseDE = () => (
           ))}
         </div>
         <div className="text-center mt-12">
-          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-10 py-6 transition-transform duration-200 hover:scale-105 shadow-lg font-bold" onClick={() => window.open('/w#/bookcart?fcourses=getting_practical_with_ai_for_non_techies', '_blank')}>
+          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-10 py-6 transition-transform duration-200 hover:scale-105 shadow-lg font-bold" id="signup" onClick={() => window.open('/w#/bookcart?fcourses=getting_practical_with_ai_for_non_techies', '_blank')}>
             Jetzt Gesamtprogramm buchen
           </Button>
         </div>
@@ -262,30 +257,18 @@ const AICourseDE = () => (
       </div>
     </section>
 
-    {/* Pricing & Dates */}
+    {/* Termine */}
     <section className="py-12 bg-white">
       <div className="container max-w-6xl mx-auto px-6">
-        <h2 className="text-2xl font-bold text-center mb-8 text-blue-900">Preise & Termine</h2>
-        
-        {/* Pricing Cards */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-blue-50 rounded-xl p-6 border-4 border-blue-300 shadow-xl relative">
-            <span className="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue text-white text-xs font-bold px-4 py-1 rounded-full shadow-lg">Bester Wert</span>
-            <h4 className="text-lg font-semibold text-blue-800 mb-2">Preisoptionen</h4>
-            <ul className="text-blue-900 text-base mb-2">
-              <li>Pro Modul: <span className="font-bold">€299</span></li>
-              <li>Gesamtprogramm: <span className="font-bold">€800</span> <span className="text-green-700 font-bold">(10% sparen)</span></li>
-            </ul>
-          </div>
-          <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
-            <h4 className="text-lg font-semibold text-blue-800 mb-2">Was ist enthalten</h4>
-            <ul className="text-blue-900 text-base space-y-1">
-              <li>• 3 interaktive Live-Sessions</li>
-              <li>• Praktische Übungen & Vorlagen</li>
-              <li>• Community-Zugang</li>
-              <li>• Lebenslanger Zugang zu Kursmaterialien</li>
-            </ul>
-          </div>
+        {/* Was ist enthalten */}
+        <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-12">
+          <h4 className="text-lg font-semibold text-blue-800 mb-2">Was ist enthalten</h4>
+          <ul className="text-blue-900 text-base space-y-1">
+            <li>• 3 live-interaktive Sessions</li>
+            <li>• Praktische Übungen & Vorlagen</li>
+            <li>• Zugang zur Community</li>
+            <li>• Lebenslanger Zugriff auf Kursmaterialien</li>
+          </ul>
         </div>
 
         {/* Session Selection */}

@@ -136,11 +136,13 @@ const Navbar = () => {
   ];
 
   const courseItems = isGermanContext ? [
-    { title: "Praktisch mit KI arbeiten", href: "/ai-course/de" },
-    { title: "Ethik als Strategie", href: "/ethics-course/de" }
+    { title: "Von KI inspirieren lassen", href: "/ai-course/de" },
+    { title: "Ethik als Strategie", href: "/ethics-course/de" },
+    { title: "Stolpersteine der Corporate Innovation", href: "/stumbling-blocks/de" }
   ] : [
-    { title: "Getting Practical with AI", href: "/ai-course" },
-    { title: "Ethics as Strategy", href: "/ethics-course" }
+    { title: "Be Inspired by AI", href: "/ai-course" },
+    { title: "Ethics as Strategy", href: "/ethics-course" },
+    { title: "Stumbling Blocks in Corporate Innovation", href: "/stumbling-blocks" }
   ];
 
   return (

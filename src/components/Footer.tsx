@@ -43,7 +43,7 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4">Programs</h4>
             <ul className="space-y-2">
-              <li><a href="/ai-course" className="text-blue hover:text-blue-700 transition-colors">🚀 Featured Course: Getting Practical with AI</a></li>
+              <li><a href="/ai-course" className="text-blue hover:text-blue-700 transition-colors">🚀 Featured Course: Be Inspired by AI</a></li>
               <li><a href="#mastermind" className="text-gray-400 hover:text-white transition-colors">Mastermind Groups</a></li>
               <li><a href="#learning-modules" className="text-gray-400 hover:text-white transition-colors">Learning Modules</a></li>
               <li><a href="#events" className="text-gray-400 hover:text-white transition-colors">Events</a></li>

@@ -8,7 +8,6 @@ import GrowthPathSectionDE from '../components/GrowthPathSectionDE';
 import MastermindSectionDE from '../components/MastermindSectionDE';
 import LearningModulesSectionDE from '../components/LearningModulesSectionDE';
 import EventsSectionDE from '../components/EventsSectionDE';
-import TestimonialsSectionDE from '../components/TestimonialsSectionDE';
 import DifferenceSectionDE from '../components/DifferenceSectionDE';
 import WhoForSectionDE from '../components/WhoForSectionDE';
 import MembershipProcessSectionDE from '../components/MembershipProcessSectionDE';
@@ -63,7 +62,6 @@ const IndexDE = () => {
       <MastermindSectionDE />
       <LearningModulesSectionDE />
       <EventsSectionDE />
-      <TestimonialsSectionDE />
       <DifferenceSectionDE />
       <WhoForSectionDE />
       <MembershipProcessSectionDE />
@@ -75,4 +73,3 @@ const IndexDE = () => {
 };
 
 export default IndexDE;
-

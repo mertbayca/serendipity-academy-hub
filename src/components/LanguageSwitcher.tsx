@@ -15,6 +15,7 @@ const LanguageSwitcher: React.FC = () => {
     if (path.startsWith('/mastermind')) return navigate('/mastermind/de');
     if (path.startsWith('/ai-course')) return navigate('/ai-course/de');
     if (path.startsWith('/ethics-course')) return navigate('/ethics-course/de');
+    if (path.startsWith('/stumbling-blocks')) return navigate('/stumbling-blocks/de');
     return navigate('/de');
   };
 
@@ -28,6 +29,7 @@ const LanguageSwitcher: React.FC = () => {
     if (path.startsWith('/mastermind/de')) return navigate('/mastermind');
     if (path.startsWith('/ai-course/de')) return navigate('/ai-course');
     if (path.startsWith('/ethics-course/de')) return navigate('/ethics-course');
+    if (path.startsWith('/stumbling-blocks/de')) return navigate('/stumbling-blocks');
     // Fallback for unknown /de routes
     return navigate('/');
   };

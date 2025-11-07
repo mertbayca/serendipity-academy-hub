@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import DiscountBanner from '@/components/DiscountBanner';
 import { Button } from '@/components/ui/button';
 import { CheckCircleIcon, LightBulbIcon, Cog6ToothIcon, RocketLaunchIcon, UserGroupIcon, ClockIcon } from '@heroicons/react/24/solid';
 
@@ -83,15 +84,14 @@ const outcomes = [
 ];
 
 const testimonial = {
-  quote: "I never thought I'd use AI at work, but this course made it simple and fun. Now I use ChatGPT for reports and brainstorming every week!",
-  author: "Anna S.",
-  role: "Project Manager, Zurich"
+  quote: "The AI course from Innovators Serendipity was a game changer for me! I picked up so many practical tips I could apply right away, especially for creative work. Thanks to the clear guidance, I now craft prompts more intentionally and use AI actively for my book project and business ideas. I absolutely recommend it to anyone who wants to use AI creatively and strategically!",
+  author: "Simone M.",
+  role: "Co-Founder"
 };
 
 const heroInfo = [
   { label: "Start Date", value: "November 13, 2025" },
   { label: "Timeslots", value: "12:00–13:00 or 17:00–18:00 CET" },
-  { label: "Price", value: "€299 per module or €800 for full program" },
 ];
 
 const moduleLinks = [
@@ -111,16 +111,24 @@ const AICourse = () => (
       <svg className="absolute left-0 top-0 w-full h-full z-0" style={{opacity:0.18}} viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="#3b82f6" fillOpacity="1" d="M0,160L60,170.7C120,181,240,203,360,197.3C480,192,600,160,720,133.3C840,107,960,85,1080,101.3C1200,117,1320,171,1380,197.3L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
       <div className="container max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12 relative z-10">
         <div className="flex-1 flex flex-col items-start justify-center">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-blue-900 leading-tight">Getting Practical with AI</h1>
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-blue-700">For Non-Techies</h2>
-          <p className="text-lg md:text-xl text-blue-800 mb-8 max-w-xl leading-relaxed font-light">A hands-on, jargon-free course for professionals who want to move from AI confusion to AI confidence.</p>
-          <div className="flex flex-wrap gap-4 mb-8">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-blue-900 leading-tight">Be Inspired <span className="block">By AI</span></h1>
+          <p className="text-lg md:text-xl text-blue-800 mb-3 max-w-xl leading-relaxed">Develop your ideas further by using AI</p>
+          <p className="text-lg md:text-xl text-blue-800 mb-3 max-w-xl leading-relaxed">Most of us know AI tools and have tried it. This course is for professionals who seek inspiration: What else can be done with AI? How can it fuel innovation? How can it save time in everyday tasks?</p>
+          <p className="text-lg md:text-xl text-blue-700 mb-8 max-w-xl leading-relaxed font-semibold">Be inspired and join our November course!</p>
+          <div className="flex flex-wrap gap-4 mb-6">
             {heroInfo.map((item, i) => (
               <span key={i} className="inline-block bg-white/90 border border-blue-200 text-blue-900 text-sm md:text-base rounded-full px-5 py-2 font-semibold shadow-sm">
                 <span className="font-bold">{item.label}:</span> <span className="font-bold">{item.value}</span>
               </span>
             ))}
           </div>
+          <DiscountBanner
+            title="Early Bird: Save 25% on the full program"
+            description="Enroll before 30 November to lock in 25% off our upcoming sessions."
+            code="EB2025"
+            validity="Valid through 30 Nov 2025"
+            className="mt-2"
+          />
         </div>
         <div className="flex-1 flex justify-center">
           <img src="/assets/raquel2.png" alt="Raquel M. Katigbak" className="rounded-xl shadow-lg w-72 h-72 object-cover border-4 border-blue-100" />
@@ -128,15 +136,13 @@ const AICourse = () => (
       </div>
       {/* Butlerapp Course Table */}
       <div className="container max-w-5xl mx-auto px-6 relative z-10 mt-8">
-        <div className="w-full bg-white/80 backdrop-blur-xl border border-gray-100/50 rounded-3xl p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
-          <div className="mb-4">
-            <h3 className="text-lg font-medium text-gray-900 mb-1">Book Your Course</h3>
-            <p className="text-sm text-gray-500">Select your preferred dates and modules</p>
-          </div>
-          <div className="websail overflow-hidden">
-            <wscourselist className="ws-element" fcourses="getting_practical_with_ai_for_non_techies" data-ftagsnot="intern"></wscourselist>
-          </div>
-        </div>
+        <wscourselist
+          className="ws-element"
+          fcourses="getting_practical_with_ai_for_non_techies"
+          data-ftagsnot="intern"
+          data-columns="course,place,price,from,to,info,infolink,remaining,booklink"
+          data-fixed-columns="course,place,booklink"
+        ></wscourselist>
       </div>
     </section>
 
@@ -204,7 +210,7 @@ const AICourse = () => (
           ))}
         </div>
         <div className="text-center mt-12">
-          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-10 py-6 transition-transform duration-200 hover:scale-105 shadow-lg font-bold" onClick={() => window.open('/w#/bookcart?fcourses=getting_practical_with_ai_for_non_techies', '_blank')}>
+          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-10 py-6 transition-transform duration-200 hover:scale-105 shadow-lg font-bold" id="signup" onClick={() => window.open('/w#/bookcart?fcourses=getting_practical_with_ai_for_non_techies', '_blank')}>
             Book Full Program Now
           </Button>
         </div>
@@ -251,30 +257,18 @@ const AICourse = () => (
       </div>
     </section>
 
-    {/* Pricing & Dates */}
+    {/* Dates */}
     <section className="py-12 bg-white">
       <div className="container max-w-6xl mx-auto px-6">
-        <h2 className="text-2xl font-bold text-center mb-8 text-blue-900">Pricing & Dates</h2>
-        
-        {/* Pricing Cards */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-blue-50 rounded-xl p-6 border-4 border-blue-300 shadow-xl relative">
-            <span className="absolute -top-5 left-1/2 -translate-x-1/2 bg-blue text-white text-xs font-bold px-4 py-1 rounded-full shadow-lg">Best Value</span>
-            <h4 className="text-lg font-semibold text-blue-800 mb-2">Pricing Options</h4>
-            <ul className="text-blue-900 text-base mb-2">
-              <li>Per Module: <span className="font-bold">€299</span></li>
-              <li>Full Program: <span className="font-bold">€800</span> <span className="text-green-700 font-bold">(save 10%)</span></li>
-            </ul>
-          </div>
-          <div className="bg-blue-50 rounded-xl p-6 border border-blue-100">
-            <h4 className="text-lg font-semibold text-blue-800 mb-2">What's Included</h4>
-            <ul className="text-blue-900 text-base space-y-1">
-              <li>• 3 live interactive sessions</li>
-              <li>• Practical exercises & templates</li>
-              <li>• Community access</li>
-              <li>• Lifetime course materials</li>
-            </ul>
-          </div>
+        {/* What's Included */}
+        <div className="bg-blue-50 rounded-xl p-6 border border-blue-100 mb-12">
+          <h4 className="text-lg font-semibold text-blue-800 mb-2">What's Included</h4>
+          <ul className="text-blue-900 text-base space-y-1">
+            <li>• 3 live interactive sessions</li>
+            <li>• Practical exercises & templates</li>
+            <li>• Community access</li>
+            <li>• Lifetime course materials</li>
+          </ul>
         </div>
 
         {/* Session Selection */}
@@ -288,7 +282,7 @@ const AICourse = () => (
                     Up Next
                   </span>
                 )}
-                
+
                 <div className="text-center mb-4">
                   <h4 className="text-lg font-bold text-blue-900 mb-2">{session.month}</h4>
                   <div className="flex justify-center items-center gap-2 mb-4">
@@ -331,10 +325,13 @@ const AICourse = () => (
         </div>
 
         <div className="text-center">
-          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6 transition-transform duration-200 hover:scale-105 shadow-lg" id="signup" onClick={() => window.open('/w#/bookcart?fcourses=getting_practical_with_ai_for_non_techies', '_blank')}>Book Full Program Now</Button>
+          <Button className="bg-blue hover:bg-blue-dark text-white text-lg px-8 py-6 transition-transform duration-200 hover:scale-105 shadow-lg" id="signup" onClick={() => window.open('/w#/bookcart?fcourses=getting_practical_with_ai_for_non_techies', '_blank')}>
+            Book Full Program Now
+          </Button>
         </div>
       </div>
     </section>
+
     <Footer />
   </div>
 );
